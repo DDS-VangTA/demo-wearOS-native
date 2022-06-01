@@ -21,51 +21,76 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/txt_velocity_value"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/ll_velocity_distance"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0.0 Km/h"
-                android:textColor="@android:color/holo_blue_light"
-                android:textSize="12sp" />
+                android:weightSum="2">
 
-            <TextView
-                android:id="@+id/txt_distance_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt_velocity_value"
-                android:text="0.0 Km"
-                android:textColor="@android:color/holo_blue_light"
-                android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/txt_velocity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0.0 Km/h"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txt_distance_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_velocity_value"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="0.0 Km"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txt_steps_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txt_distance_value"
-                android:text="0.0 steps"
+                android:layout_below="@id/ll_velocity_distance"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="0 steps"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="12sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txt_location_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txt_steps_value"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="start"
                 android:text="lat: , lon: "
                 android:textColor="@android:color/holo_blue_light"
                 android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="48dp"
-                android:layout_height="32dp"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_below="@id/txt_location_value"
-                android:background="@android:color/holo_green_light"
-                android:gravity="center"
-                android:text="Start"
-                android:textAllCaps="false"
-                android:textSize="12sp" />
+                android:gravity="center_horizontal"
+                android:paddingTop="8dp">
+
+                <Button
+                    android:id="@+id/btn_start"
+                    android:layout_width="48dp"
+                    android:layout_height="32dp"
+                    android:background="@android:color/holo_green_light"
+                    android:gravity="center"
+                    android:text="Start"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
         </RelativeLayout>
     </FrameLayout>
 </androidx.wear.widget.BoxInsetLayout>
